@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "now-start": "micro"
+  },
+  "dependencies": {
+    "micro": "^9.3.3",
+    "micro-fork": "^1.0.0",
+    "node-fetch": "^2.3.0"
+  }
+}
