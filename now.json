@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "latest-now-cli",
   "builds": [
     { "src": "*.js", "use": "@now/node" }
   ],
