@@ -2,6 +2,7 @@ const { join } = require('path')
 const { send } = require('micro')
 const { router, get } = require('micro-fork')
 const serveMarked = require('serve-marked')
+const fetch = require('node-fetch')
 
 const API_PREFIX = 'https://circleci.com/api/v1.1/project/github/zeit/now-cli'
 
