@@ -1,7 +1,6 @@
 const { send } = require('micro')
 const { router, get } = require('micro-fork')
 const serveMarked = require('serve-marked')
-const fetch = require('node-fetch')
 
 const API_PREFIX = 'https://circleci.com/api/v1.1/project/github/zeit/now-cli'
 
@@ -58,9 +57,8 @@ const downloadBuild = async (req, res) => {
     if (found) {
       console.log(`[${build_num}/${bin_name}]`, found.url)
 
-      return fetch(found.url).then(resp => {
-        resp.body.pipe(res);
-      })
+      res.setHeader('Location', found.url)
+      send(res, 302)
     }
   }
 
