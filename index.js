@@ -24,7 +24,7 @@ const binNameFromUA = (ua) => {
 const downloadLatestBuild = async (req, res) => {
   const binName = req.query.bin || binNameFromUA(req.headers['user-agent'])
 
-  if (!binName) {
+  if (!binName || !req.query.branch) {
     return send(res, 400)
   }
 

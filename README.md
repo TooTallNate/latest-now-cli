@@ -2,7 +2,7 @@
 
 [![github-src]][github-href]
 
-Download latest, work-in-progress now-cli binary from CircleCI.
+Download **bleeding-edge** now-cli binary from CircleCI's artifacts service.
 
 ## Usage
 
