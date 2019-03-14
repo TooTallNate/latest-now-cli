@@ -28,7 +28,7 @@ const downloadLatestBuild = async (req, res) => {
     return send(res, 400)
   }
 
-  const url = `${API_PREFIX}/tree/now-dev`
+  const url = `${API_PREFIX}/tree/${req.query.branch}`
   const builds = await fetch(url).then(res => res.json())
 
   if (builds.length) {
