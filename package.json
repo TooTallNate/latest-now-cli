@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "now-start": "micro"
+    "start": "micro"
   },
   "dependencies": {
     "micro": "^9.3.3",

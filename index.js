@@ -1,10 +1,11 @@
+const { join } = require('path')
 const { send } = require('micro')
 const { router, get } = require('micro-fork')
 const serveMarked = require('serve-marked')
 
 const API_PREFIX = 'https://circleci.com/api/v1.1/project/github/zeit/now-cli'
 
-const readme = serveMarked('./README.md', {
+const readme = serveMarked(join(__dirname, 'README.md'), {
   title: 'latest-now-cli',
   inlineCSS: `
     .markdown-body h1 + p {

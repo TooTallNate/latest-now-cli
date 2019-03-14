@@ -1,4 +1,10 @@
 {
-  "version": 1,
-  "alias": "latest-now-cli"
+  "version": 2,
+  "alias": "latest-now-cli",
+  "builds": [
+    { "src": "*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }
