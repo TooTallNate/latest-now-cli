@@ -1,13 +1,19 @@
-const fs = require('fs')
 const { send } = require('micro')
 const { router, get } = require('micro-fork')
+const serveMarked = require('../serve-marked')
 const fetch = require('node-fetch')
 
 const API_PREFIX = 'https://circleci.com/api/v1.1/project/github/zeit/now-cli'
 
-const readme = (req, res) => {
-  send(res, 200, fs.readFileSync('./README.md', 'utf8'))
-}
+const readme = serveMarked('./README.md', {
+  title: 'latest-now-cli',
+  inlineCSS: `
+    .markdown-body h1 + p {
+      text-align: center;
+      margin: -2.6rem 0 4em 0;
+    }
+  `
+})
 
 const downloadLatestBuild = async (req, res) => {
   const url = `${API_PREFIX}/tree/now-dev`

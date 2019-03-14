@@ -99,6 +99,11 @@ is-stream@1.1.0:
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
 
+marked@^0.5.1:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.5.2.tgz#3efdb27b1fd0ecec4f5aba362bddcd18120e5ba9"
+  integrity sha512-fdZvBa7/vSQIZCi4uuwo2N3q+7jJURpMVCcbaX0S1Mg65WZ5ilXvC67MviJAsdjqqgD+CEq4RKo5AYGgINkVAA==
+
 micro-fork@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/micro-fork/-/micro-fork-1.0.0.tgz#42fed381f07edd9cfb2c944555e35935b4fcff2a"
@@ -148,6 +153,13 @@ semver-store@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/semver-store/-/semver-store-0.3.0.tgz#ce602ff07df37080ec9f4fb40b29576547befbe9"
   integrity sha512-TcZvGMMy9vodEFSse30lWinkj+JgOBvPn8wRItpQRSayhc+4ssDs335uklkfvQQJgL/WvmHLVj4Ycv2s7QCQMg==
+
+serve-marked@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/serve-marked/-/serve-marked-0.4.0.tgz#541ba60bb16db093acaea4757f02cef46958c71c"
+  integrity sha512-BnDmgJNA8i7tLbP99OFX+79MgHyaSaiwqLTNPAtpKqOWBs1GpBztQ+/qsX5MTQz3DmA8F163k9qHiEsYA5ruAA==
+  dependencies:
+    marked "^0.5.1"
 
 setprototypeof@1.0.3:
   version "1.0.3"
