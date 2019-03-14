@@ -15,17 +15,27 @@ const readme = serveMarked('./README.md', {
   `
 })
 
+const binNameFromUA = (ua) => {
+  if (ua.includes('Macintosh')) return 'now-macos'
+  if (ua.includes('Windows')) return 'now-win.exe'
+  if (ua.includes('Linux')) return 'now-linux'
+}
+
 const downloadLatestBuild = async (req, res) => {
+  const binName = req.query.bin || binNameFromUA(req.headers['user-agent'])
+
+  if (!binName) {
+    return send(res, 400)
+  }
+
   const url = `${API_PREFIX}/tree/now-dev`
   const builds = await fetch(url).then(res => res.json())
 
   if (builds.length) {
     const buildNum = builds[0].previous_successful_build.build_num
-    const binName = req.query.bin || 'now-linux'
 
     res.setHeader('Location', `/download/${buildNum}/${binName}`)
-    res.setHeader('Cache-Control', 'public, s-maxage=300')
-    send(res, 302)
+    return send(res, 302)
   }
 
   send(res, 404)
