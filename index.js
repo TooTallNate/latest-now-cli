@@ -33,7 +33,10 @@ const downloadLatestBuild = async (req, res) => {
   const builds = await fetch(url).then(res => res.json())
 
   if (builds.length) {
-    const buildNum = builds[0].previous_successful_build.build_num
+    const build = builds.find(build => {
+      return build.build_parameters.CIRCLE_JOB === 'build'
+    })
+    const buildNum = build.build_num
 
     res.setHeader('Location', `/download/${buildNum}/${binName}`)
     return send(res, 302)
